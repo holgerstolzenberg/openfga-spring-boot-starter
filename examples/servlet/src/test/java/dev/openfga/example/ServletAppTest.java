@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.testcontainers.openfga.OpenFGAContainer;
 
-public class TestServletApp {
+public class ServletAppTest {
 
     public static void main(String[] args) {
         SpringApplication.from(ServletApp::main)
