@@ -6,7 +6,8 @@ plugins {
 }
 
 wrapper {
-    gradleVersion = '9.6.1'
+    gradleVersion = '9.8.0'
+    distributionSha256Sum = 'bafd5ce9cfaea0fbccfdc8439a1ac42fbd4cd9c89dc9a988228d8a2639a58e6c'
 }
 
 java {
@@ -27,6 +28,7 @@ dependencyManagement {
     }
 }
 
+// TODO example: update for Spring Boot 4 baseline and JsonSerializer usage
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
