@@ -5,7 +5,10 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.testcontainers.openfga.OpenFGAContainer;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 public class ServletAppTest {
 
     public static void main(String[] args) {
@@ -16,13 +19,11 @@ public class ServletAppTest {
 
     @TestConfiguration(proxyBeanMethods = false)
     static class TestConfig {
-
         @Bean
         OpenFGAContainer container(DynamicPropertyRegistry registry) {
-            OpenFGAContainer container = new OpenFGAContainer("openfga/openfga:v1.4.3");
+            OpenFGAContainer container = new OpenFGAContainer("openfga/openfga:v1.21.0");
             registry.add("openfga.api-url", container::getHttpEndpoint);
             return container;
         }
-
     }
 }
