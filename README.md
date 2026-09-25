@@ -60,7 +60,7 @@ implementation("dev.openfga:openfga-spring-boot-starter:0.4.1") // x-release-ple
 
 ### Requirements
 
-Java >= 17 and Spring Boot >= 4.1
+- Java >= 17 and Spring Boot
 
 ## Spring Boot compatibility
 
@@ -404,7 +404,7 @@ To customize the `ApiClient` configuration, create a `@Bean` method in your Spri
 
 @Bean
 public ApiClient apiClient(HttpClient.Builder builder, JsonSerializer jsonSerializer) {
-    return new ApiClient(httpClientBuilder, jsonSerializer);
+    return new ApiClient(builder, jsonSerializer);
 }
 ```
 
@@ -421,13 +421,12 @@ public HttpClient.Builder httpClientBuilder() {
 
 ## Testing with Testcontainers
 
-The starter ships a Spring Boot [
-`@ServiceConnection`](https://docs.spring.io/spring-boot/reference/testing/testcontainers.html#testing.testcontainers.service-connections)
+The starter ships a Spring Boot
+[`@ServiceConnection`](https://docs.spring.io/spring-boot/reference/testing/testcontainers.html#testing.testcontainers.service-connections)
 for OpenFGA. When the optional `org.springframework.boot:spring-boot-testcontainers` and
 `org.testcontainers:openfga` dependencies are on the test classpath, an `OpenFGAContainer` annotated
 with `@ServiceConnection` is automatically mapped into the Spring environment, so no
-`openfga.api-url`
-property is required in tests:
+`openfga.api-url` property is required in tests:
 
 ```java
 
