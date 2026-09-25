@@ -403,8 +403,8 @@ To customize the `ApiClient` configuration, create a `@Bean` method in your Spri
 ```java
 
 @Bean
-public ApiClient apiClient(HttpClient.Builder builder, ObjectMapper mapper) {
-    return new ApiClient(httpClientBuilder, objectMapper);
+public ApiClient apiClient(HttpClient.Builder builder, JsonSerializer jsonSerializer) {
+    return new ApiClient(httpClientBuilder, jsonSerializer);
 }
 ```
 

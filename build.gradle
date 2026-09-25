@@ -50,11 +50,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-autoconfigure'
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
-    // TODO jackson: new dependency coordinates ?
-    implementation 'com.fasterxml.jackson.core:jackson-databind'
-    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
-    implementation "org.openapitools:jackson-databind-nullable:${jacksonDatabindNullableVersion}"
-
     api "dev.openfga:openfga-sdk:${openfgaSdkVersion}"
 
     // Optional Testcontainers @ServiceConnection support. Only needed when consumers opt in to
@@ -68,7 +63,6 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.hamcrest:hamcrest'
     testImplementation 'org.mockito:mockito-core'
-    testImplementation 'com.fasterxml.jackson.core:jackson-databind'
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     testImplementation 'org.testcontainers:testcontainers-junit-jupiter'
     testImplementation 'org.testcontainers:testcontainers-openfga'
